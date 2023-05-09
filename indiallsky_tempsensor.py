@@ -23,9 +23,10 @@ def get_temperature_in_degree():
       return temp_c
 while True:
   with open("/home/fritz/temp.txt","w") as file:
-    file.write(str(get_temperature_in_degree()) + "\n")
-    file.close()  
-  print(get_temperature_in_degree())
-  time.sleep(1)
+      file.write("{\n\"temp\": \"" + str(get_temperature_in_degree()) + "\"\n}\n")
+  file.close()  
+  print("{\n\"temp\": \"" + str(get_temperature_in_degree()) + "\"\n}\n")
+  time.sleep(10)
+        
 
 
